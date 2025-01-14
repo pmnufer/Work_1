@@ -1,4 +1,3 @@
-This repository is to show projects that I have worked on. 
 
 Viewing order
 
