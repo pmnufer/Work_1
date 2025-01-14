@@ -2,9 +2,9 @@ This repository is to show projects that I have worked on.
 
 Viewing order
 
-page 1 performance
-page 1 bottom
-page 1 performance select
-page 1 custom
-page 1 range
-page 2 performance
+1. page 1 performance
+2. page 1 bottom
+3. page 1 performance select
+4. page 1 custom
+5. page 1 range
+6. page 2 performance
