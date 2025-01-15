@@ -1,0 +1,5 @@
+DOW - 6 = 
+if(WEEKDAY(today() - 6, 1) > 1 && WEEKDAY(today() - 6, 1) < WEEKDAY(TODAY(), 1),
+    FORMAT(TODAY() - 6, "dddd"),
+    FORMAT(TODAY() - 7, "dddd")
+)
