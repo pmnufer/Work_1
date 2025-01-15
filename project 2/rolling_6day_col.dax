@@ -1,0 +1,5 @@
+DOW - 6day col = 
+if(WEEKDAY(today() - WEEKDAY('Date table'[date]), 1) > 0 && WEEKDAY(today() - WEEKDAY('Date table'[date]), 1) < WEEKDAY(TODAY(), 1),
+    MOD(7 + WEEKDAY(TODAY(), 1) - WEEKDAY('Date table'[date]), 7),
+    MOD(6 + WEEKDAY(TODAY(), 1) - WEEKDAY('Date table'[date]), 7)
+)
