@@ -1,0 +1,10 @@
+ButtonLabel = 
+    VAR _selectedperiod = SELECTEDVALUE(customDates[Period])
+    VAR _start = MIN(customDates[Date])
+    VAR _end = MAX(customDates[Date])
+    RETURN SWITCH(true,
+        _selectedperiod = "Custom...",FORMAT(_start,"d mmm")&" - "&FORMAT(_end,"d mmm")&" ✎", 
+        _selectedperiod = "Today", FORMAT(_start,"d mmm yyyy") ,
+        _selectedperiod = "Yesterday", FORMAT(_start,"d mmm yyyy") ,
+        FORMAT(_start,"d mmm")&" - "&FORMAT(_end,"d mmm") 
+    )
