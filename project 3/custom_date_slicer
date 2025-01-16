@@ -1,0 +1,18 @@
+CustomDates = 
+VAR _datetable = 'Date table'
+VAR _today = TODAY()
+VAR _month = MONTH(TODAY())
+VAR _year = YEAR(TODAY())
+VAR _thismonthstart = DATE(_year, _month, 1)
+VAR _lastmonthstart = EDATE(_thismonthstart, -1)
+VAR _lastmonthend = _thismonthstart-1
+
+
+RETURN UNION(
+    ADDCOLUMNS(FILTER(_datetable,[Date]>_today-8),"Period","Last 7 Days","Order",1),
+    ADDCOLUMNS(FILTER(_datetable,[Date]>=_thismonthstart),"Period","This Month","Order",2),
+    ADDCOLUMNS(FILTER(_datetable,[Date]>=_lastmonthstart && [Date]<=_lastmonthend),"Period","Last Month","Order",3),
+    ADDCOLUMNS(FILTER(_datetable,[Date]>_today-31),"Period","Last 30 Days","Order",4),
+    ADDCOLUMNS(FILTER(_datetable,[Date]>_today-91),"Period","Last 90 Days","Order",5),
+    ADDCOLUMNS(_datetable,"Period","Custom...","Order",6)
+)
